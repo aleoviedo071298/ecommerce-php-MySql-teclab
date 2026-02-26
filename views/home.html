@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <link rel="stylesheet" href="../assets/css/estilos.css" />
+</head>
+
+<header class="topbar">
+  <img src="../assets/img/teclab.png" alt="Teclab" class="logo" />
+</header>
+
+<body>
+  <div class="contenedor">
+    <h1 id="titulo">Productos</h1>
+    <div id="cartas" class="row g-4">
+    </div>
+
+    <div class="btn-group" style="justify-content: center; margin-top: 20px;">
+      <a href="../backend/views/productos.html" class="btn-agregar">Agregar Producto</a>
+      <a href="../backend/views/categorias.html" class="btn-agregar">Agregar Categoría</a>
+    </div>
+
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
+  <script>
+    $(document).ready(function () {
+      $.ajax({
+        url: '../index.php',
+        type: 'POST',
+        data: { action: 'cartas' },
+        success: function (response) {
+          $("#cartas").html(response);
+        }
+      })
+    });
+  </script>
+</body>
+</html>
