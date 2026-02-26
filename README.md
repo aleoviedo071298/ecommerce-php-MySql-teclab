@@ -1,58 +1,123 @@
-# eCommerce Teclab
+## Improved README (drop-in replacement) 🚀🛒
 
-This is the final project for the Teclab course. It is a web application developed with PHP and MySQL for managing and viewing a product catalog.
+```md
+# eCommerce Teclab 🛒
+
+Final project for the Teclab course (2026).  
+A PHP + MySQL web application to **manage and display a hardware product catalog**, organized by categories and rendered dynamically.
 
 ## Table of Contents
+- [Overview](#overview)
 - [Features](#features)
-- [Technical Architecture](#technical-architecture)
+- [Tech Stack](#tech-stack)
+- [Architecture](#architecture)
 - [Project Structure](#project-structure)
-- [Logic Explanation](#logic-explanation)
-- [Requirements](#requirements)
-- [Installation](#installation)
+- [Database](#database)
+- [Setup & Installation](#setup--installation)
+- [Usage](#usage)
+- [Security Notes](#security-notes)
 - [Author](#author)
 
+---
+
+## Overview
+This project implements a modular structure inspired by **MVC**, using **OOP** and **PDO** to keep the code clean, reusable, and safe for database operations.
+
+---
+
 ## Features
+- **Product Catalog**: Dynamic hardware listing (CPU, GPU, RAM, etc.).
+- **Categories**: Products linked via `categoria_id` for organized browsing.
+- **Responsive UI**: Works smoothly on mobile and desktop.
+- **OOP Codebase**: Separation of concerns and reusable classes.
+- **Single-query listing**: Products + category name via `LEFT JOIN`.
 
-- **Product Catalog**: Dynamic display of hardware products.
-- **Category System**: Products are organized by specific categories (CPU, GPU, RAM, etc.).
-- **Responsive Design**: Modern and fluid interface for mobile and desktop.
-- **OOP Structure**: Clean code using Object-Oriented Programming principles.
+---
 
-## Technical Architecture
+## Tech Stack
+- **Backend**: PHP (OOP) + PDO
+- **Database**: MySQL
+- **Frontend**: HTML + CSS
+- **Async**: AJAX (for dynamic content loading)
 
-The project follows a modular structure inspired by the MVC (Model-View-Controller) pattern:
+---
 
-- **Classes (Models)**: Encapsulate data and business logic.
-- **AJAX/Controllers**: Handle requests and interact with classes to return dynamic content.
-- **Frontend (Views)**: HTML and CSS for the user interface.
+## Architecture
+MVC-inspired modular design:
+
+- **Models (`/class`)**  
+  Business logic and database access (`database.php`, `productos.php`, `categorias.php`).
+
+- **Controllers (`/backend`)**  
+  Request handlers (AJAX endpoints) that call model methods and return results.
+
+- **Views (`/views`)**  
+  UI templates and rendering logic.
+
+- **Entry point (`index.php`)**  
+  Main router / content loader for the frontend.
+
+---
 
 ## Project Structure
+```
 
-- `/assets`: CSS styles and product images.
-- `/backend`: PHP scripts for administrative actions (categories/products).
-- `/class`: Core logic classes (`database.php`, `productos.php`, `categorias.php`).
-- `/views`: HTML templates for the frontend.
-- `index.php`: Main entry point and dynamic content handler.
+/assets     -> CSS styles + product images
+/backend    -> PHP endpoints for actions (products/categories)
+/class      -> Core classes (database, productos, categorias, autoload)
+/views      -> Frontend templates
+index.php   -> Main entry point
 
-## Logic Explanation
+````
 
-### 1. Database Management (`database.php`)
-Uses **PDO (PHP Data Objects)** for secure database interactions. It implements generic methods for CRUD operations using prepared statements to prevent SQL Injection.
+---
 
-### 2. Autoload System (`autoload.php`)
-Implements `spl_autoload_register`, allowing the application to load classes automatically without requiring multiple `include` or `require` statements throughout the project.
+## Database
+The app uses **PDO + prepared statements** to reduce SQL Injection risk.
 
-### 3. Product Logic (`productos.php`)
-The `productos` class handles the lifecycle of a product:
-- `save()`: Inserts a new product into the database.
-- `listarConCategorias()`: Executes a `LEFT JOIN` query to fetch products along with their category names in a single database call.
+### Key concepts
+- Products reference categories using `categoria_id`.
+- Product listing uses `LEFT JOIN` to fetch category names in the same query:
+  - `listarConCategorias()` returns `p.*` + `categoria_nombre`.
 
-### 4. Categorized Filtering
-The system maps each product to a `categoria_id`, allowing the frontend to display data organized by hardware type.
+---
+
+## Setup & Installation
+
+### Requirements
+- PHP 8.x (recommended)
+- MySQL 5.7+ / 8.x
+- Apache (XAMPP/Laragon) or similar local server
+
+### 1) Clone repository
+
+### 2) Create the database
+
+### 3) Import SQL
+
+### 4) Configure connection
+
+---
+
+## Usage
+
+* Start your local server (Apache + MySQL).
+* Open the project in your browser:
+
+  * `http://localhost/<project-folder>/`
+
+---
+
+## Security Notes
+
+* Database access via **PDO prepared statements**.
+* Avoid committing secrets:
+
+---
 
 ## Author
 
-- **Alejandro Oviedo**
+**Alejandro Oviedo**
+Final Project — Teclab — 2026
 
----
-Final Project - Teclab - 2026
+```
