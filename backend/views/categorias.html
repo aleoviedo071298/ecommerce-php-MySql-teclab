@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Agregar Categoría</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../../assets/css/estilos.css">
+</head>
+<header class="topbar">
+    <img src="../../assets/img/teclab.png" alt="Teclab" class="logo" />
+</header>
+
+<body>
+    <div class="contenedor">
+        <h1 id="titulo">Agregar Categoría</h1>
+        <form id="form_categorias" action="../categorias.php" method="post" enctype="multipart/form-data">
+            <label for="nombre_categoria">Nombre de la Categoría</label>
+            <input type="text" name="categorias" id="nombre_categoria">
+
+            <div class="btn-group">
+                <button type="button" class="btn-cancelar" id="boton_cancelar"
+                    onclick="window.location.href='lista_categorias.html'">Cancelar</button>
+                <button type="submit" class="btn-guardar" id="boton_guardar">Guardar</button>
+            </div>
+            <h2 class="author">Alejandro Oviedo</h2>
+        </form>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="../../assets/js/validaciones.js" type="text/javascript"></script>
+
+</body>
+
+</html>

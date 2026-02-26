@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Productos</title>
+    <link rel="stylesheet" href="../../assets/css/estilos.css">
+</head>
+
+<header class="topbar">
+    <img src="../../assets/img/teclab.png" alt="Teclab" class="logo" />
+</header>
+
+<body>
+    <div class="contenedor">
+
+        <h1 id="titulo">Lista de Productos</h1>
+        <table id="productos">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Imagen</th>
+                    <th>Nombre</th>
+                    <th>Descripción</th>
+                    <th>Categoría</th>
+                    <th>Precio</th>
+                </tr>
+            </thead>
+            <tbody id="listarProductos">
+            </tbody>
+        </table>
+
+        <div class="btn-group" style="justify-content: center; margin-top: 20px;">
+            <a href="productos.html" class="btn-agregar">Agregar Producto</a>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function () {
+            $.ajax({
+                url: '../../class/autoload.php',
+                type: 'POST',
+                data: { action: 'listarProductos' },
+                success: function (response) {
+                    $("#listarProductos").html(response);
+                }
+            })
+        });
+    </script>
+</body>
+
+</html>

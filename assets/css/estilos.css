@@ -1,0 +1,230 @@
+:root {
+  --primary-color: #003366;
+  --secondary-color: #f4f4f4;
+  --border-color: #cccccc;
+  --text-color: #333333;
+  --white: #ffffff;
+  --accent-blue: #2c5d88;
+  --success: #28a745;
+  --danger: #dc3545;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #ebebeb;
+  color: var(--text-color);
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+h1#titulo {
+  color: var(--primary-color);
+  margin: 20px 0;
+  text-align: center;
+  font-size: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.topbar {
+  background: var(--primary-color);
+  padding: 10px 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 3px solid #001a33;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.logo {
+  height: 50px;
+  width: auto;
+  filter: brightness(1.2);
+}
+
+.contenedor {
+  max-width: 1200px;
+  margin: 30px auto;
+  padding: 30px;
+  background-color: var(--white);
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  height: 100%;
+  background: var(--white);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1) !important;
+}
+
+.card-img-container {
+  height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #eee;
+}
+
+.product-image {
+  max-height: 100%;
+  width: auto;
+  object-fit: contain;
+}
+
+.card-body {
+  padding: 1.25rem;
+}
+
+.card-title {
+  font-size: 1.1rem;
+  color: var(--primary-color);
+}
+
+.card-text {
+  font-size: 0.9rem;
+  color: #666;
+  line-height: 1.4;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  background: var(--white);
+}
+
+table th {
+  background-color: var(--primary-color);
+  color: var(--white);
+  padding: 12px 15px;
+  text-align: left;
+  font-weight: 600;
+  border-bottom: 2px solid #001a33;
+}
+
+table td {
+  padding: 10px 15px;
+  border-bottom: 1px solid #eeeeee;
+}
+
+table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+table tr:hover {
+  background-color: #f1f1f1;
+}
+
+img.product-thumb {
+  width: 80px;
+  height: auto;
+  border: 1px solid #ddd;
+  padding: 2px;
+  background: #fff;
+}
+
+form {
+  max-width: 500px;
+  margin: 20px auto;
+  padding: 30px;
+  background: var(--white);
+  border: 1px solid var(--border-color);
+  border-top: 4px solid var(--primary-color);
+}
+
+form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+input[type="text"],
+input[type="number"],
+input[type="file"],
+textarea,
+select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  font-family: inherit;
+}
+
+textarea {
+  height: 100px;
+  resize: vertical;
+}
+
+.btn-group {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.btn-agregar {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: var(--accent-blue);
+  color: white;
+  text-decoration: none;
+  border-radius: 3px;
+  font-weight: bold;
+  transition: background 0.2s;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-agregar:hover {
+  background-color: #1e415f;
+}
+
+.btn-guardar {
+  padding: 10px 25px;
+  background-color: var(--success);
+  color: white;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.btn-guardar:hover {
+  background-color: #218838;
+}
+
+.btn-cancelar {
+  padding: 10px 25px;
+  background-color: var(--danger);
+  color: white;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.btn-cancelar:hover {
+  background-color: #c82333;
+}
+
+h2.author {
+  margin-top: 30px;
+  font-size: 0.9rem;
+  color: #888;
+  text-align: center;
+  font-style: italic;
+  border-top: 1px solid #eee;
+  padding-top: 15px;
+}
