@@ -1,6 +1,3 @@
-## Improved README (drop-in replacement) 🚀🛒
-
-```md
 # eCommerce Teclab 🛒
 
 Final project for the Teclab course (2026).  
@@ -121,3 +118,4 @@ The app uses **PDO + prepared statements** to reduce SQL Injection risk.
 Final Project — Teclab — 2026
 
 ```
+
