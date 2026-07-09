@@ -1,84 +1,52 @@
 # eCommerce Teclab
 
-Final project for the Teclab course (2026): a PHP + MySQL web application to manage
-and display a hardware product catalog, organized by categories and rendered
-dynamically.
+> PHP + MySQL product catalog with MVC-inspired architecture, PDO prepared statements, and AJAX dynamic loading.
 
-## Overview
+![PHP](https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white)
+![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
 
-Implements a modular structure inspired by MVC, using OOP and PDO to keep the code
-clean, reusable, and safe for database operations.
+## About
+
+Final project for the Teclab programming course (2026). A hardware product catalog built with PHP and MySQL, organized by categories and rendered dynamically. Uses PDO with prepared statements throughout and a modular structure inspired by MVC.
 
 ## Features
 
 - **Product catalog** — dynamic hardware listing (CPU, GPU, RAM, etc).
 - **Categories** — products linked via `categoria_id` for organized browsing.
-- **Responsive UI** — works on mobile and desktop.
-- **OOP codebase** — separation of concerns, reusable classes.
+- **OOP codebase** — reusable classes, clean separation of concerns.
 - **Single-query listing** — products + category name via `LEFT JOIN`.
-
-## Tech Stack
-
-- **Backend**: PHP (OOP) + PDO
-- **Database**: MySQL
-- **Frontend**: HTML + CSS
-- **Async**: AJAX for dynamic content loading
-
-## Architecture
-
-MVC-inspired modular design:
-
-- **Models** (`/class`) — business logic and database access (`database.php`, `productos.php`, `categorias.php`).
-- **Controllers** (`/backend`) — AJAX endpoint handlers that call model methods.
-- **Views** (`/views`) — UI templates and rendering logic.
-- **Entry point** (`index.php`) — main router / content loader.
+- **AJAX** — dynamic content loading without page reloads.
+- **Responsive UI** — works on mobile and desktop.
 
 ## Project Structure
 
 ```
-/assets     CSS styles + product images
-/backend    PHP endpoints for actions (products/categories)
-/class      Core classes (database, productos, categorias, autoload)
-/views      Frontend templates
-index.php   Main entry point
+ecommerce-php-MySql-teclab/
+├── index.php        Main router / content loader
+├── /assets          CSS styles + product images
+├── /backend         PHP AJAX endpoint handlers
+├── /class           Core classes (database, productos, categorias, autoload)
+└── /views           Frontend templates
 ```
 
-## Database
+## Setup
 
-Uses PDO with prepared statements to reduce SQL injection risk. Products reference
-categories via `categoria_id`; product listing uses a `LEFT JOIN` to fetch the
-category name in a single query (`listarConCategorias()` returns `p.*` +
-`categoria_nombre`).
+**Requirements:** PHP 8.x, MySQL 5.7+/8.x, Apache (XAMPP/Laragon).
 
-## Setup & Installation
+```bash
+git clone https://github.com/aleoviedo071298/ecommerce-php-MySql-teclab.git
+```
 
-### Requirements
-- PHP 8.x (recommended)
-- MySQL 5.7+ / 8.x
-- Apache (XAMPP/Laragon) or a similar local server
-
-### Steps
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/aleoviedo071298/ecommerce-php-MySql-teclab.git
-   ```
-2. Create a MySQL database named `miproyecto`.
-3. Import the included schema:
+1. Create a MySQL database named `miproyecto`.
+2. Import the schema:
    ```bash
    mysql -u root -p miproyecto < miproyecto.sql
    ```
-4. Check connection settings in [`class/database.php`](class/database.php). Defaults match a typical local XAMPP/Laragon setup (`host=localhost`, `user=root`, no password).
+3. Check connection settings in `class/database.php` — defaults match a standard XAMPP setup (`host=localhost`, `user=root`, no password).
+4. Open `http://localhost/ecommerce-php-MySql-teclab/`.
 
-## Usage
+---
 
-Start your local server (Apache + MySQL), then open `http://localhost/<project-folder>/`.
-
-## Security Notes
-
-- Database access goes through PDO prepared statements.
-- If you switch `class/database.php` to real credentials, keep them out of version control (environment variables or a git-ignored local config).
-
-## Author
-
-**Alejandro Oviedo**
-Final Project — Teclab — 2026
+**Alejandro Oviedo** · [LinkedIn](https://www.linkedin.com/in/aleoviedo071298/) · [GitHub](https://github.com/aleoviedo071298)
